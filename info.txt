@@ -1,0 +1,15 @@
+guidelines here
+
+a front end and back-end application; functioning on k8s
+
+book library:
+  1. retrieve all available books
+  2. search book by name and author
+  3. get images for books stored in db
+  
+3 pods:
+  1. front end
+  2. back end
+  3. db
+  
+ 
