@@ -11,6 +11,7 @@ collection = database["test_col"]
 def main_page():
     return "<h1>Hello World</h1>"
 
+# get names for all books
 @app.route("/data")
 def get_data():
     all_data = collection.distinct('name')
