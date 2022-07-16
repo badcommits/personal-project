@@ -11,3 +11,6 @@ book library:
   1. front end
   2. back end
   3. db
+
+
+to expose the service, run 'minikube service <service-name>'
