@@ -19,15 +19,13 @@ spec:
         image: shipthebuildaway/ramp-up:flask-api
         ports:
         - containerPort: 5000
-      imagePullSecrets:
-      - name: regcred
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: flask-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: flask
   ports:
