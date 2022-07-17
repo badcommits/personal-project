@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -15,6 +15,15 @@ def main_page():
 def about_page():
     return render_template('about.html')
 
+@app.route("/search")
+def search_book():
+    return render_template('search.html')
+    names = collection.distinct('name')
+    if request.form['name'] in names:
+        return redirect('results.html')
+    else:
+        return redirect('error.html')
+
 # get names for all books
 @app.route("/data")
 def get_data():
@@ -22,4 +31,4 @@ def get_data():
     return str(all_data)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
