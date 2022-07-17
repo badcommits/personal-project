@@ -36,9 +36,11 @@ kind: Service
 metadata:
   name: mongodb-service
 spec:
+  type: NodePort
   selector:
     app: mongodb
   ports:
     - protocol: TCP
       port: 27017
       targetPort: 27017
+      nodePort: 31001

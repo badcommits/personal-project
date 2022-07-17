@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: private-reg
+spec:
+  containers:
+  - name: private-reg-container
+    image: 671041269596.dkr.ecr.us-west-2.amazonaws.com/handsontask:flask-api
+  imagePullSecrets:
+  - name: regcred

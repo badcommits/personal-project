@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = MongoClient("mongodb://username:password@localhost:27017/test_db")
+client = MongoClient("mongodb://username:password@192.168.49.2:31001/")
 database = client["test_db"]
 collection = database["test_col"]
 
@@ -22,4 +22,4 @@ def get_data():
     return str(all_data)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host='0.0.0.0', port=5000)

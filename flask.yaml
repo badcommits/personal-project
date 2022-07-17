@@ -16,16 +16,17 @@ spec:
     spec:
       containers:
       - name: flask-api
-        image: shipthebuildaway/ramp-up:flask-api
+        image: 671041269596.dkr.ecr.us-west-2.amazonaws.com/handsontask:flask-api
         ports:
         - containerPort: 5000
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: flask-service
 spec:
-  type: LoadBalancer
   selector:
     app: flask
   ports:
